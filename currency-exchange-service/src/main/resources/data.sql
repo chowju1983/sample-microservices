@@ -1,0 +1,1 @@
+insert into Exchange_Value(id,currency_from,currency_to,conversion_factor) values(1000,'USD','INR',75);

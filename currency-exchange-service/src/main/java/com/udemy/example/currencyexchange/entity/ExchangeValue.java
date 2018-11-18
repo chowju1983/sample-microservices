@@ -1,0 +1,124 @@
+package com.udemy.example.currencyexchange.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class ExchangeValue{
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
+	@Column(name="currency_from")
+	private String from;
+	
+	@Column(name="currency_to")
+	private String to;
+
+	private String conversionFactor;
+	
+	@Column(nullable=true)
+	private Integer port;
+	
+
+
+	/**
+	 * @return the port
+	 */
+	public int getPort() {
+		return port;
+	}
+
+	/**
+	 * @param port the port to set
+	 */
+	public void setPort(int port) {
+		this.port = port;
+	}
+
+	public ExchangeValue() {
+		super();
+	}
+	
+	
+
+	public ExchangeValue(Long id, String from, String to, String conversionFactor, int port) {
+		super();
+		this.id = id;
+		this.from = from;
+		this.to = to;
+		this.conversionFactor = conversionFactor;
+		this.port = port;
+	}
+
+	public ExchangeValue(Long id, String from, String to, String conversionFactor) {
+		super();
+		this.id = id;
+		this.from = from;
+		this.to = to;
+		this.conversionFactor = conversionFactor;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the from
+	 */
+	public String getFrom() {
+		return from;
+	}
+
+	/**
+	 * @param from the from to set
+	 */
+	public void setFrom(String from) {
+		this.from = from;
+	}
+
+	/**
+	 * @return the to
+	 */
+	public String getTo() {
+		return to;
+	}
+
+	/**
+	 * @param to the to to set
+	 */
+	public void setTo(String to) {
+		this.to = to;
+	}
+
+	/**
+	 * @return the conversionFactor
+	 */
+	public String getConversionFactor() {
+		return conversionFactor;
+	}
+
+	/**
+	 * @param conversionFactor the conversionFactor to set
+	 */
+	public void setConversionFactor(String conversionFactor) {
+		this.conversionFactor = conversionFactor;
+	}
+
+	
+
+}
